@@ -13,17 +13,13 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
-"if executable('rls')
-"    au User lsp_setup call lsp#register_server({
-"        \ 'name': 'rls',
-"        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-"        \ 'whitelist': ['rust'],
-"        \ })
-"endif
-
-"let g:lsp_settings = {
-"	\'pyls': {'cmp': ['pyls']}
-"	\}
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
 
 if executable('pyls')
     au User lsp_setup call lsp#register_server({
@@ -31,6 +27,11 @@ if executable('pyls')
         \ 'cmd': ['pyls'],
         \ 'whitelist': ['python'],
         \ })
+endif
+
+" terminal mode
+if has("nvim")
+	tnoremap <esc> <C-\><C-n>
 endif
 
 let g:airline_theme='simple'

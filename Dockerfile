@@ -17,7 +17,11 @@ RUN apt update && \
     libtool-bin \
     autoconf \
     automake \
-    pkg-config
+    pkg-config \
+    python3 \
+    python3-neovim \
+    python3-venv \
+    python3-dev
 
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 50 && \
     update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 50 && \

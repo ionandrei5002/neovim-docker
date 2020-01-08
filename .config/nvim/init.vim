@@ -28,7 +28,7 @@ call plug#end()
 if executable('pyls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
-        \ 'cmd': ['/home/andrei/.local/share/nvim/plugged/vim-lsp-settings/servers/pyls/pyls'],
+        \ 'cmd': ['pyls'],
         \ 'whitelist': ['python'],
         \ })
 endif
